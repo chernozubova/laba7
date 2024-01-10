@@ -132,20 +132,48 @@ class Work:
             choose = input("Выберите пункт меню: ")
 
             if choose == "1":
-                pass
+                work = create_work()
+                print("Фирма создана.")
+                input("Нажмите Enter, чтобы продолжить...")
             elif choose == "2":
-                pass
+                if work:
+                    boss = create_boss()
+                    work.make_boss(boss)
+                    print("Директор назначен.")
+                else:
+                    print("Сначала создайте фирму.")
+                input("Нажмите Enter, чтобы продолжить...")
             elif choose == "3":
-                pass
+                if work:
+                    worsker = create_worker()
+                    work.make_worker(worker)
+                    print("Сотрудник создан.")
+                else:
+                    print("Сначала создайте фирму.")
+                input("Нажмите Enter, чтобы продолжить...")
             elif choose == "4":
-                pass
+                if work and work.workers:
+                    for i, worker in enumerate(work.workers, start=1):
+                        print(f"{i}. {worker}")
+                else:
+                    print("Нет сотрудников.")
+                input("Нажмите Enter, чтобы продолжить...")
             elif choose == "5":
-                pass
+                if boss:
+                    print(boss)
+                else:
+                    print("Нет директора.")
+                input("Нажмите Enter, чтобы продолжить...")
             elif choose == "6":
-                pass
+                if work:
+                    print(work)
+                else:
+                    print("Фирма не создана.")
+                input("Нажмите Enter, чтобы продолжить...")
             elif choose == "7":
-                pass
+                print("Выход из программы.")
+                break
             else:
-                pass
+                print("Некорректный выбор. Пожалуйста, выберите снова.")
 if __name__ == "__main__":
     menu()
