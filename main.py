@@ -72,10 +72,45 @@ class Work:
         return f"Фирма: {self.name_of_work}\n{boss_str}\nСотрудники:\n{workers_str}"
 
     def create_work():
-        return
+        name_of_work = input("Введите название фирмы: ")
+        return Work(name_of_work)
 
     def create_boss():
-        return
+        while True:
+            name = input("Введите имя директора: ")
+            if name.isalpha():
+                break
+            else:
+                print("Ошибка: Имя должно состоять только из букв. Попробуйте снова.")
+
+        surname = input("Введите фамилию директора: ")
+
+        while True:
+            age = input("Введите возраст директора: ")
+            try:
+                age = int(age)
+                break  # Если возраст успешно преобразован в целое число, завершаем цикл
+            except ValueError:
+                print("Ошибка: Возраст должен быть числом. Попробуйте снова.")
+
+        return Boss(name, surname, age)
 
     def create_worker():
-        return
+        while True:
+            name = input("Введите имя сотрудника: ")
+            if name.isalpha():
+                break
+            else:
+                print("Ошибка: Имя должно состоять только из букв. Попробуйте снова.")
+
+        surname = input("Введите фамилию сотрудника: ")
+
+        while True:
+            age = input("Введите возраст сотрудника: ")
+            try:
+                age = int(age)
+                break  # Если возраст успешно преобразован в целое число, завершаем цикл
+            except ValueError:
+                print("Ошибка: Возраст должен быть числом. Попробуйте снова.")
+
+        return Worker(name, surname, age)
