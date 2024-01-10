@@ -70,3 +70,12 @@ class Work:
         boss_str = f"Директор: {self.boss}" if self.boss else "Директор не назначен"
         workers_str = "\n".join(str(worker) for worker in self.workers)
         return f"Фирма: {self.name_of_work}\n{boss_str}\nСотрудники:\n{workers_str}"
+
+    def create_work():
+        return
+
+    def create_boss():
+        return
+
+    def create_worker():
+        return
