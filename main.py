@@ -145,7 +145,7 @@ class Work:
                 input("Нажмите Enter, чтобы продолжить...")
             elif choose == "3":
                 if work:
-                    worsker = create_worker()
+                    worker = create_worker()
                     work.make_worker(worker)
                     print("Сотрудник создан.")
                 else:
