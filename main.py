@@ -59,3 +59,14 @@ class Work:
     @property
     def workers(self):
         return self.__workers
+
+    def make_boss(self, boss):
+        self.__boss = boss
+
+    def make_worker(self, worker):
+        self.__workers.append(worker)
+
+    def __str__(self):
+        boss_str = f"Директор: {self.boss}" if self.boss else "Директор не назначен"
+        workers_str = "\n".join(str(worker) for worker in self.workers)
+        return f"Фирма: {self.name_of_work}\n{boss_str}\nСотрудники:\n{workers_str}"
